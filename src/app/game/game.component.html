@@ -1,0 +1,14 @@
+﻿<div class="container">
+    <h1 class="title">Game of Life</h1>
+    <div class="controls">
+        <button type="button" (click)="resumePauseGame()">{{ isGameRunning ? 'Stop' : 'Start'}}</button>
+        <h2>Generation: {{ generation }}</h2>
+    </div>
+    <div class="content">
+        <div class="emptyCell" *ngFor="let cell of cells; let index = i">
+            <div class="cell" [ngClass]="{ dead: !cell.isAlive, alive: cell.isAlive }"></div>
+
+            <div *ngIf="(i + 1) % 50 == 0"></div>
+        </div>
+    </div>
+</div>
